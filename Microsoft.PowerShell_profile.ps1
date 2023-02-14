@@ -743,3 +743,11 @@ function find-process {
     )
     Get-Process | Where-Object { $_.Name -eq $ProcessName }
 }
+
+function take {
+    param (
+        [string]$DirectoryName
+    )
+    New-Item -Path "." -Name $DirectoryName -ItemType "directory"
+    Set-Location -Path $DirectoryName
+}
