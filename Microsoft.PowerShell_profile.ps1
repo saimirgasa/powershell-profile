@@ -8,14 +8,15 @@ if ($host.Name -eq 'ConsoleHost')
 Import-Module PSColors
 Import-Module posh-git
 Import-Module -Name Terminal-Icons
-# Import-Module oh-my-posh
+Import-Module oh-my-posh
 Import-Module z
-set-alias desktop "Desktop.ps1"
-#Set-Theme ParadoxGlucose
+#set-alias desktop "Desktop.ps1"
+Set-PoshPrompt Paradox
 #Set-PoshPrompt -theme "D:\Dropbox\poshv3.json"
 
 # oh-my-posh --init --shell pwsh --config "c:\Users\scottha\OneDrive\poshv4.json" | Invoke-Expression
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_rainbow.omp.json" | Invoke-Expression
 
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
